@@ -25,5 +25,5 @@ la description de cet exemple à été généré à partir du paterns suivant :
 
 Il suffit donc de rajouter des paterns de nom de quête ou de descriptions aux tags, ou encore d'ajouter des tags afin de multiplier les possibilités.
 
-#item_generator
+# item_maker
 ce fichier sert à générer des items (armes, armures ou bijoux)
