@@ -21,6 +21,9 @@ statut : 0/25
 
 Il suffit alors de rajouter dans le dictionaire quetes_kill (dans cet exemple car on parle d'une quête de chasse) d'autres possibilité de scénarios.
 la description de cet exemple à été généré à partir du paterns suivant :
-description = giver+" "+ask_help+" pour chasser les "+objectif+" qui déciment ses "+animaux_passif+". Vous pourrez trouver les "+objectif+" "+lieux+". Tuez-en "+nb
+<code>description = giver+" "+ask_help+" pour chasser les "+objectif+" qui déciment ses "+animaux_passif+". Vous pourrez trouver les "+objectif+" "+lieux+". Tuez-en "+nb</code>
 
 Il suffit donc de rajouter des paterns de nom de quête ou de descriptions aux tags, ou encore d'ajouter des tags afin de multiplier les possibilités.
+
+#item_generator
+ce fichier sert à générer des items (armes, armures ou bijoux)
