@@ -1,6 +1,6 @@
 from random import choice
 #CONSTANTES--------------------------------------------------------------
-difficulte_range={
+difficulty_range={
 "easy":[3,6],
 "normal":[6,12],
 "hard":[20,40]

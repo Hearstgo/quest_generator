@@ -1,6 +1,6 @@
 from random import choice
 #CONSTANTES
-difficulte_range={
+difficulty_range={
 "easy": [3,6],
 "normal": [6,12],
 "hard": [20,40]
@@ -342,7 +342,7 @@ def create_quest_infos(type_of_quest,tag,giver,objectif,places,nb="None"):
 		["Hunting "+objectif,"Pacification "+places,"Hunting "+places ]],
 		"murderer": [
 		[objectif+" was seen "+places+" slaughtering his friends. "+giver+" is asking you to revenge his friends."],
-		[ "A debt of blood","The revenge of the" +giver, "The blood of the" +objectif]],
+		[ "A debt of blood","The revenge of the" +giver, "Blood of the " +objectif]],
 		"airborne":[
 		["For several weeks now, about "+nb+" "+objectif+" have been flying over us at night, making all night activity impossible. "+giver+" needs help to make the area safer. He thinks that these monsters are "+nb+" during the daytime. "],
 		["Dangerous Night", "Air Raids", "The Den of the "+ objectif]],
