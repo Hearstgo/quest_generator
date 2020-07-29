@@ -1,17 +1,17 @@
 from random import choice
 #CONSTANTES--------------------------------------------------------------
 difficulte_range={
-"facile":[3,6],
+"easy":[3,6],
 "normal":[6,12],
-"difficile":[20,40]
+"hard":[20,40]
 }
 price_range={
-"facile":1.103,
+"easy":1.103,
 "normal":1.11,
-"difficile":1.114
+"hard":1.114
 }
 
-#VARIANTE DESCRIPTION------------------------------------------------------------------------------
+#VARIANT DESCRIPTION------------------------------------------------------------------------------
 #COLOR
 couleur_ternes=["noir","blanc","gris","sombre","marron"]
 couleurs_vives=["rouge","jaune","vert","bleu","violet","orange"]
@@ -24,276 +24,275 @@ bad_side=["corrompu"]
 #Taille
 gros=["géant","colossal","colosse","goliath","élite","titan","titanesque"]
 
-#LIEUX------------------------------------------------------------------------------
-lieux_terre_sauvage=["dans les steppes","dans les landes","dans la forêt",'dans le val']
-lieux_terre_urbain=["en ville","dans les parcs","dans les égouts"]
-lieux_ocean=["en eaux tropicales","dans les profondeurs","dans les abysses","dans les récifs"]
-lieux_riviere=["dans les rivières","dans les ruisseaux","dans un fleuve","dans les torrents","dans les fiords"]
-lieux_sombres=["en forêt","dans les cavernes","dans les grottes","dans un gouffre","dans les mines"]
-lieux_glauque=["dans une nécrople","dans les cryptes","dans les égouts"]
-lieux_humides=["dans un marais",'dans une toubière','dans des marigots',"dans la mangrove","dans les rizières"]
-lieux_altitude=["sur la crête","dans les pierriers","dans la montagne","dans les montagnes",]
-lieux_froids=["dans la toundra","dans un glacier"]
-lieux_sec=["dans le desert","dans les dunes","dans la savane","dans un mesa"]
+#places------------------------------------------------------------------------------
+places_terre_sauvage=["dans les steppes","dans les landes","dans la forêt",'dans le val']
+places_terre_urbain=["en ville","dans les parcs","dans les égouts"]
+places_ocean=["en eaux tropicales","dans les profondeurs","dans les abysses","dans les récifs"]
+places_riviere=["dans les rivières","dans les ruisseaux","dans un fleuve","dans les torrents","dans les fiords"]
+places_sombres=["en forêt","dans les cavernes","dans les grottes","dans un gouffre","dans les mines"]
+places_glauque=["dans une nécrople","dans les cryptes","dans les égouts"]
+places_humides=["dans un marais",'dans une toubière','dans des marigots',"dans la mangrove","dans les rizières"]
+places_altitude=["sur la crête","dans les pierriers","dans la montagne","dans les montagnes",]
+places_froids=["dans la toundra","dans un glacier"]
+places_sec=["dans le desert","dans les dunes","dans la savane","dans un mesa"]
 
 bestiaire_passif=["cochons","vaches","poules","animaux"]
 
-
 bestiaire_agressif={
 "Loups":{
-	"tag":["carnivore","groupe"],
-	"variante":couleur_ternes+couleur_pelage+adj_agressif,
-	"lieux":lieux_terre_sauvage
+	"tag":["carnivore","group"],
+	"variant":couleur_ternes+couleur_pelage+adj_agressif,
+	"places":places_terre_sauvage
 },
 "Ogres":{
-	"tag":["groupe","meurtrier"],
-	"variante":couleur_ternes,
-	"lieux":lieux_altitude+lieux_sombres
+	"tag":["group","meurtrier"],
+	"variant":couleur_ternes,
+	"places":places_altitude+places_sombres
 },
 "Gobelins":{
-	"tag":["groupe","meurtrier"],
-	"variante":[],
-	"lieux":lieux_sombres+["dans les marais"]
+	"tag":["group","meurtrier"],
+	"variant":[],
+	"places":places_sombres+["dans les marais"]
 },
 "Slimes":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_terre_sauvage
+	"variant":[],
+	"places":places_terre_sauvage
 },
 "Araignées":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_sombres+["dans les forêt"]
+	"variant":[],
+	"places":places_sombres+["dans les forêt"]
 },
 "Banshees":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_sombres
+	"variant":[],
+	"places":places_sombres
 },
 "Basilic":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_sombres+lieux_glauque
+	"variant":[],
+	"places":places_sombres+places_glauque
 },
 "Terreurs mineures":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_sombres+lieux_glauque+["en enfer"]
+	"variant":[],
+	"places":places_sombres+places_glauque+["en enfer"]
 },
 "Terreur majeure":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_sombres+lieux_glauque+["en enfer"]
+	"variant":[],
+	"places":places_sombres+places_glauque+["en enfer"]
 },
 "Cyclope":{
 	"tag":["meurtrier"],
-	"variante":[],
-	"lieux":lieux_sombres+lieux_altitude
+	"variant":[],
+	"places":places_sombres+places_altitude
 },
 "Démon":{
 	"tag":["meurtrier"],
-	"variante":[],
-	"lieux":lieux_sombres+lieux_glauque+["en enfer"]
+	"variant":[],
+	"places":places_sombres+places_glauque+["en enfer"]
 },
 "Djin":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_terre_sauvage+lieux_sec
+	"variant":[],
+	"places":places_terre_sauvage+places_sec
 },
 "Dragon":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_altitude+["dans les cavernes"]
+	"variant":[],
+	"places":places_altitude+["dans les cavernes"]
 },
 "Dryades":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_riviere
+	"variant":[],
+	"places":places_riviere
 },
 "Centaures":{
-	"tag":["groupe"],
-	"variante":[],
-	"lieux":lieux_terre_sauvage
+	"tag":["group"],
+	"variant":[],
+	"places":places_terre_sauvage
 },
 "Chauves-souris":{
 	"tag":["aérien"],
-	"variante":[],
-	"lieux":lieux_sombres+lieux_glauque
+	"variant":[],
+	"places":places_sombres+places_glauque
 },
 "Chimères":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_sombres
+	"variant":[],
+	"places":places_sombres
 },
 "Ectoplasmes":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_sombres+lieux_glauque
+	"variant":[],
+	"places":places_sombres+places_glauque
 },
 "Elementaires":{
-	"tag":["groupe"],
-	"variante":[],
-	"lieux":lieux_terre_sauvage+lieux_riviere+lieux_sec+lieux_humides+lieux_froids+lieux_altitude
+	"tag":["group"],
+	"variant":[],
+	"places":places_terre_sauvage+places_riviere+places_sec+places_humides+places_froids+places_altitude
 },
 "Ents":{
 	"tag":[],
-	"variante":[],
-	"lieux":["dans les forêt","en forêt"]
+	"variant":[],
+	"places":["dans les forêt","en forêt"]
 },
 "Fantômes":{
 	"tag":["aérien"],
-	"variante":[],
-	"lieux":["dans un vieux manoir"]+lieux_sombres
+	"variant":[],
+	"places":["dans un vieux manoir"]+places_sombres
 },
 "Farfadets":{
-	"tag":["groupe"],
-	"variante":[],
-	"lieux":lieux_terre_sauvage
+	"tag":["group"],
+	"variant":[],
+	"places":places_terre_sauvage
 },
 "Géants":{
-	"tag":["groupe"],
-	"variante":[],
-	"lieux":lieux_terre_sauvage+lieux_altitude
+	"tag":["group"],
+	"variant":[],
+	"places":places_terre_sauvage+places_altitude
 },
 "Génie":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_sec+["dans les bois"]
+	"variant":[],
+	"places":places_sec+["dans les bois"]
 },
 "Gnomes":{
-	"tag":["groupe"],
-	"variante":[],
-	"lieux":lieux_sombres+lieux_altitude
+	"tag":["group"],
+	"variant":[],
+	"places":places_sombres+places_altitude
 },
 "Golem":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_terre_sauvage+lieux_sombres+lieux_altitude
+	"variant":[],
+	"places":places_terre_sauvage+places_sombres+places_altitude
 },
 "Goules":{
 	"tag":["meurtrier"],
-	"variante":[],
-	"lieux":lieux_sombres+lieux_glauque
+	"variant":[],
+	"places":places_sombres+places_glauque
 },
 "Gorgones":{
-	"tag":["groupe","meurtrier"],
-	"variante":[],
-	"lieux":lieux_humides+lieux_glauque
+	"tag":["group","meurtrier"],
+	"variant":[],
+	"places":places_humides+places_glauque
 },
 "Griffons":{
-	"tag":["groupe"],
-	"variante":[],
-	"lieux":lieux_altitude
+	"tag":["group"],
+	"variant":[],
+	"places":places_altitude
 },
 "Harpies":{
-	"tag":["groupe","meurtrier","aérien"],
-	"variante":[],
-	"lieux":lieux_altitude
+	"tag":["group","meurtrier","aérien"],
+	"variant":[],
+	"places":places_altitude
 },
 "Hobgobelins":{
-	"tag":["groupe","meurtrier"],
-	"variante":[],
-	"lieux":lieux_terre_sauvage+lieux_sombres+["dans les marais"]
+	"tag":["group","meurtrier"],
+	"variant":[],
+	"places":places_terre_sauvage+places_sombres+["dans les marais"]
 },
 "Hydre":{
 	"tag":[],
-	"variante":[],
-	"lieux":["en forêt"]
+	"variant":[],
+	"places":["en forêt"]
 },
 "Kraken":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_ocean
+	"variant":[],
+	"places":places_ocean
 },
 "Lutins":{
-	"tag":["groupe"],
-	"variante":[],
-	"lieux":lieux_terre_sauvage+lieux_sombres
+	"tag":["group"],
+	"variant":[],
+	"places":places_terre_sauvage+places_sombres
 },
 "Manticore":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_terre_sauvage
+	"variant":[],
+	"places":places_terre_sauvage
 },
 "Minautore":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_terre_sauvage+lieux_altitude
+	"variant":[],
+	"places":places_terre_sauvage+places_altitude
 },
 "Momies":{
-	"tag":["groupe"],
-	"variante":[],
-	"lieux":lieux_sec+lieux_glauque
+	"tag":["group"],
+	"variant":[],
+	"places":places_sec+places_glauque
 },
 "Nymphes":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_ocean+lieux_riviere
+	"variant":[],
+	"places":places_ocean+places_riviere
 },
 "Ondines":{
 	"tag":["marin"],
-	"variante":[],
-	"lieux":lieux_ocean
+	"variant":[],
+	"places":places_ocean
 },
 "Orcs":{
-	"tag":["groupe","meurtrier"],
-	"variante":[],
-	"lieux":lieux_terre_sauvage+lieux_sombres
+	"tag":["group","meurtrier"],
+	"variant":[],
+	"places":places_terre_sauvage+places_sombres
 },
 "Revenants":{
-	"tag":["groupe","meurtrier"],
-	"variante":[],
-	"lieux":lieux_glauque
+	"tag":["group","meurtrier"],
+	"variant":[],
+	"places":places_glauque
 },
 "Scorpions":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_sec
+	"variant":[],
+	"places":places_sec
 },
 "Sirènes":{
-	"tag":["groupe","marin"],
-	"variante":[],
-	"lieux":lieux_ocean
+	"tag":["group","marin"],
+	"variant":[],
+	"places":places_ocean
 },
 "Sorcière":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_glauque
+	"variant":[],
+	"places":places_glauque
 },
 "Spectres":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_glauque
+	"variant":[],
+	"places":places_glauque
 },
 "Sphinx":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_altitude
+	"variant":[],
+	"places":places_altitude
 },
 "Squelettes":{
 	"tag":["meurtrier"],
-	"variante":[],
-	"lieux":lieux_sombres+lieux_glauque
+	"variant":[],
+	"places":places_sombres+places_glauque
 },
 "Titan":{
 	"tag":[],
-	"variante":[],
-	"lieux":lieux_terre_sauvage+lieux_altitude
+	"variant":[],
+	"places":places_terre_sauvage+places_altitude
 },
 "Trolls":{
-	"tag":["groupe","meurtrier"],
-	"variante":[],
-	"lieux":lieux_terre_sauvage+lieux_froids+lieux_humides+lieux_sombres
+	"tag":["group","meurtrier"],
+	"variant":[],
+	"places":places_terre_sauvage+places_froids+places_humides+places_sombres
 },
 "Vampires":{
-	"tag":["groupe","meurtrier"],
-	"variante":[],
-	"lieux":lieux_sombres+lieux_glauque
+	"tag":["group","meurtrier"],
+	"variant":[],
+	"places":places_sombres+places_glauque
 },
 "Zombies":{
-	"tag":["groupe","meurtrier"],
-	"variante":[],
-	"lieux":lieux_glauque
+	"tag":["group","meurtrier"],
+	"variant":[],
+	"places":places_glauque
 }
 }
 
@@ -305,17 +304,14 @@ ask_help_exemples=[
 	"demande de l'aide d'un mage puissant",
 	"demande de l'aide d'un aventurier",
 	]
-#Nom de quetes par type
-quete_name={
-"kill":["Extermination des {1}","la fin des {1}"]
-}
 
-def create_quest_infos(type_of_quest,tag,giver,objectif,lieux,nb="None"):
+
+def create_quest_infos(type_of_quest,tag,giver,objectif,places,nb="None"):
 	"""Entrées :
 	type_of_quest (str) : kill/collect/escort
 	giver (str) : nom du donneur de quête
 	objectif : nom  du monstre/objet/plante/pnj à tuer/récolter/aider/parler
-	lieux (str) : nom du lieux pour trouver les monstres/objets a recolter/pnj avec qui discuter
+	places (str) : nom du places pour trouver les monstres/objets a recolter/pnj avec qui discuter
 	nb (str) : nombre de monstre/objets à tuer/recolter vaut "None" par défaut et pour les quêtes de type escort
 	Sortie :
 	name (str) : le nom de la quête
@@ -323,27 +319,32 @@ def create_quest_infos(type_of_quest,tag,giver,objectif,lieux,nb="None"):
 	"""
 	ask_help=choice(ask_help_exemples)
 
+
 	if type_of_quest=="kill":
 		animaux_passif=choice(bestiaire_passif)
+		#Nom de quetes par type
+		quete_name={
+		"kill":["Extermination des "+objectif,"la fin des "+objectif]
+		}
 		
 		quetes_kill={
 		"carnivore":[
-			[giver+" "+ask_help+" pour chasser les "+objectif+" qui déciment ses "+animaux_passif+". Vous pourrez trouver les "+objectif+" "+lieux+". Tuez-en "+nb],
+			[giver+" "+ask_help+" pour chasser les "+objectif+" qui déciment ses "+animaux_passif+". Vous pourrez trouver les "+objectif+" "+places+". Tuez-en "+nb],
 			["Protéger les "+animaux_passif+" de "+giver,"Venger les "+animaux_passif,"Venger les "+animaux_passif+" de "+giver,"Aider "+giver]],
-		"agressif":[
-			[giver+" "+ask_help+" pour le protéger des "+objectif+" qui sévissent "+lieux+". D'après "+giver+" il faudrait en tuer "+nb+" pour éliminer la menace.",giver+" "+ask_help+" pour tuer "+nb+" "+objectif+". Après avoir attaqué "+giver+", les "+objectif+" ont fuis "+lieux+"."],
+		"agressive":[
+			[giver+" "+ask_help+" pour le protéger des "+objectif+" qui sévissent "+places+". D'après "+giver+" il faudrait en tuer "+nb+" pour éliminer la menace.",giver+" "+ask_help+" pour tuer "+nb+" "+objectif+". Après avoir attaqué "+giver+", les "+objectif+" ont fuis "+places+"."],
 			["Protégez "+giver,"Au secours de "+giver,"Les peurs de "+giver]],
-		"groupe":[
-		["Cela fait maintenant plusieurs jours que des "+nb+" "+objectif+" vagabondent en groupe "+lieux+". "+giver+" "+ask_help+" afin d'éradiquer la menace."],
-		["Chasse aux "+objectif,"Pacification "+lieux,"Chasse "+lieux]],
+		"group":[
+		["Cela fait maintenant plusieurs jours que des "+nb+" "+objectif+" vagabondent en groupe "+places+". "+giver+" "+ask_help+" afin d'éradiquer la menace."],
+		["Chasse aux "+objectif,"Pacification "+places,"Chasse "+places]],
 		"meurtrier":[
-		["Des "+objectif+" ont été vus "+lieux+" en train de massacrer ses amis. "+giver+" vous demande de venger ses amis."],
+		["Des "+objectif+" ont été vus "+places+" en train de massacrer ses amis. "+giver+" vous demande de venger ses amis."],
 		["Une dette de sang","La vengeance de "+giver,"Le sang des "+objectif]],
 		"aérien":[
-		["Cela fait maintenant plusieurs semaines qu'environ "+nb+" "+objectif+" nous survolent la nuit rendant toute activité nocture impossible. "+giver+" à besoin d'aide pour rendre la zone plus sûre. Il pense que ces monstres sont "+lieux+" durant la journée."],
+		["Cela fait maintenant plusieurs semaines qu'environ "+nb+" "+objectif+" nous survolent la nuit rendant toute activité nocture impossible. "+giver+" à besoin d'aide pour rendre la zone plus sûre. Il pense que ces monstres sont "+places+" durant la journée."],
 		["Nuit dangereuses","Raids aériens","le repaire des "+objectif]],
 		"marin":[
-		[giver+" "+ask_help+" car nombre de nos pêcheurs se font pièger et tuer par les "+objectif+". D'après certains, vous pourrez les trouver "+lieux],
+		[giver+" "+ask_help+" car nombre de nos pêcheurs se font pièger et tuer par les "+objectif+". D'après certains, vous pourrez les trouver "+places],
 		["A la pêche !","La vengeance des marins"]],
 		"eau":[
 		[],

@@ -2,8 +2,7 @@
 
 import random
 from tools import random_key, to_gold
-from item import generate_item
-from quest_data import difficulte_range, price_range, create_quest_infos, bestiaire_agressif
+from item_maker import generate_item
 
 
 #-------------------------------------------------------------------------------
@@ -58,8 +57,12 @@ class Quest():
 #GENERATION---------------------------------------------------------
 #-------------------------------------------------------------------
 
-def generate_quest(giver,lvl="default",lvl_max=30,name="default",description="default",reward="default",objectif=["default",-1],difficulte="default",type_quest="default"):
-	""" si le nom ou la description de la quete ou l'objectif est modifié alors il faut aussi modifier ceux cité précédement"""
+def generate_quest(giver,language="eng",lvl="default",lvl_max=30,name="default",description="default",reward="default",objectif=["default",-1],difficulte="default",type_quest="default"):
+	""" si le nom ou la description de la quete ou l'objectif est modifié alors il faut aussi modifier ceux cité précédement. de plus objectif n'est pas encore parametrable"""
+	if language=="fr":
+		from quest_data import difficulte_range, price_range, create_quest_infos, bestiaire_agressif
+	elif language=="eng":
+		from quest_data_eng import difficulte_range, price_range, create_quest_infos, bestiaire_agressif
 
 	#creation de l'objet quete
 	quest=Quest()
@@ -79,12 +82,12 @@ def generate_quest(giver,lvl="default",lvl_max=30,name="default",description="de
 	#difficulte
 	if difficulte=="default":
 		if quest.lvl <= lvl_max//4:
-			quest.difficulte=random.choice(["facile","normal"])
+			quest.difficulte=random.choice(["easy","normal"])
 		elif quest.lvl <=(3*lvl_max)//4:
 			quest.difficulte=random.choice(["normal"])
 
 		else :
-			quest.difficulte=random.choice(["difficile"])
+			quest.difficulte=random.choice(["hard"])
 
 	else:
 		quest.difficulte=difficulte
@@ -93,11 +96,11 @@ def generate_quest(giver,lvl="default",lvl_max=30,name="default",description="de
 	if objectif[0]=="default":
 		if type_quest=="kill":
 			obj = random_key(bestiaire_agressif) #obj = objectif donc dans la cas d'une quete de kill, un monstre du bestiaire_agressif
-			tag = random.choice(bestiaire_agressif[obj]["tag"]+["agressif"])
-			lieu = random.choice(bestiaire_agressif[obj]["lieux"])
+			tag = random.choice(bestiaire_agressif[obj]["tag"]+["aggressive"])
+			lieu = random.choice(bestiaire_agressif[obj]["places"])
 			if random.randint(1,2)==2:
-				if len(bestiaire_agressif[obj]["variante"])!=0:
-					obj+=" "+random.choice(bestiaire_agressif[obj]["variante"])
+				if len(bestiaire_agressif[obj]["variant"])!=0:
+					obj+=" "+random.choice(bestiaire_agressif[obj]["variant"])
 			
 			number=random.randint(difficulte_range[quest.difficulte][0],difficulte_range[quest.difficulte][1])
 
@@ -106,10 +109,12 @@ def generate_quest(giver,lvl="default",lvl_max=30,name="default",description="de
 		elif type_quest=="talk":
 			print("------------- A CODER -------------")
 
+
+
 	#name 
 	if name=="default":
 		if type_quest=="kill":
-			quest_name_descri =create_quest_infos(type_of_quest="kill",tag=tag,giver=giver,objectif=obj,lieux=lieu,nb=str(number))
+			quest_name_descri =create_quest_infos(type_of_quest="kill",tag=tag,giver=giver,objectif=obj,places=lieu,nb=str(number))
 			quest.name=quest_name_descri[0]
 			descri = quest_name_descri[1]
 		elif type_quest=="collect":
@@ -136,7 +141,7 @@ def generate_quest(giver,lvl="default",lvl_max=30,name="default",description="de
 	#reward
 	if reward=="default":
 		gold=round(price_range[quest.difficulte]**quest.lvl,4)
-		quest.reward["name"]=[to_gold(gold)]
+		quest.reward["name"]=[to_gold(gold,lang=language)]
 		quest.reward["data"]=[gold]
 
 		#ajout d'un item:
@@ -155,5 +160,5 @@ def generate_quest(giver,lvl="default",lvl_max=30,name="default",description="de
 #--------------------------------------------------------------------------
 #TEST----------------------------------------------------------------------
 #--------------------------------------------------------------------------
-ma_quete=generate_quest(giver="Mr Beans",type_quest="kill")
+ma_quete=generate_quest(giver="O'Conor",type_quest="kill")
 ma_quete.info()
