@@ -3,7 +3,7 @@
 A quest generator made by Hearstgo<br>
 I'm French (that explain english mistakes)<br>
 coded in Python 3.8<br>
-Go check it at https://trinket.io/python3/a580beb024<br>
+Go check it at https://trinket.io/python3/01b4fedf41<br>
 yeah just click on the link
 
 # How to use it if the version on the previous link is outdated ? 
