@@ -1,4 +1,4 @@
-#Codé et imaginé par Hugo Rey
+#Codé et imaginé par Hearstgo
 
 import random
 from tools import to_gold, random_key

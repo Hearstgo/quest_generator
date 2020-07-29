@@ -122,13 +122,14 @@ def generate_quest(giver,language="eng",lvl="default",lvl_max=30,name="default",
 			if random.randint(1,2)==2:
 				if len(bestiaire_agressif[obj]["variant"])!=0:
 					obj+=" "+random.choice(bestiaire_agressif[obj]["variant"])
-			
 			number=random.randint(difficulty_range[quest.difficulty][0],difficulty_range[quest.difficulty][1])
 
 		elif quest.type_quest=="collect":
 			print("------------- TO CODE -------------")
 		elif quest.type_quest=="talk":
 			print("------------- TO CODE -------------")
+	else :
+		quest.objectif=objectif
 
 
 
@@ -158,7 +159,8 @@ def generate_quest(giver,language="eng",lvl="default",lvl_max=30,name="default",
 		quest.description=description
 
 	#statut
-	quest.objectif[1]=number
+	if objectif[1]==-1:
+		quest.objectif[1]=number
 
 	#reward
 	if reward=="default":
@@ -190,5 +192,6 @@ def generate_quest(giver,language="eng",lvl="default",lvl_max=30,name="default",
 
 #to generate a item randomly : generate_item()
 
-ma_quete=generate_quest(giver="O'Conor",reward=[1.28,generate_item(),generate_item()])
+ma_quete=generate_quest(giver="O'Conor",language="eng") #or language="fr"
 ma_quete.info()
+
