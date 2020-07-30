@@ -331,7 +331,7 @@ def create_quest_infos(type_of_quest,tag,giver,objectif,places,nb="None"):
 		"carnivore":[
 			[giver+" "+ask_help+" pour chasser les "+objectif+" qui déciment ses "+animaux_passif+". Vous pourrez trouver les "+objectif+" "+places+". Tuez-en "+nb],
 			["Protéger les "+animaux_passif+" de "+giver,"Venger les "+animaux_passif,"Venger les "+animaux_passif+" de "+giver,"Aider "+giver]],
-		"agressive":[
+		"aggressive":[
 			[giver+" "+ask_help+" pour le protéger des "+objectif+" qui sévissent "+places+". D'après "+giver+" il faudrait en tuer "+nb+" pour éliminer la menace.",giver+" "+ask_help+" pour tuer "+nb+" "+objectif+". Après avoir attaqué "+giver+", les "+objectif+" ont fuis "+places+"."],
 			["Protégez "+giver,"Au secours de "+giver,"Les peurs de "+giver]],
 		"group":[
